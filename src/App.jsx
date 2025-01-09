@@ -5,18 +5,22 @@ import { Routes, Route } from 'react-router-dom'
 import { Box, Container } from '@chakra-ui/react'
 import { useColorModeValue } from './components/ui/color-mode'
 import HomePage from './pages/HomePage'
-function App() {
-  
+
+const App = () => {
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
-    <Box minH={"100vh"} bg={useColorModeValue("gray.100","gray.900")}>
-      <NavBar  />
-      <Routes>
-        <Route path='/' element={<HomePage />}/>
-      </Routes>
-      
+    <Box>
+      <NavBar onNavigate={scrollToSection} />
+      <HomePage />
     </Box>
-  )
-}
+  );
+};
 
-export default App
+export default App;
+

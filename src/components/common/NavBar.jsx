@@ -2,6 +2,7 @@ import { Flex, Box, HStack, Link, IconButton, Spacer, Button, VStack, useDisclos
 import { Link as RouterLink } from 'react-router-dom';
 import { useColorMode } from '../ui/color-mode';
 import { BiMoon, BiSun, BiMenu, BiX } from 'react-icons/bi';
+import { useColorModeValue } from '../ui/color-mode';
 import {
     DrawerActionTrigger,
     DrawerBackdrop,
@@ -13,14 +14,16 @@ import {
     DrawerRoot,
     DrawerTitle,
     DrawerTrigger,
-  } from '@/components/ui/drawer'
+  } from '@/components/ui/drawer';
 
-function NavBar() {
+function NavBar({onNavigate}) {
   const { colorMode, toggleColorMode } = useColorMode();
-  const { isOpen, onToggle } = useDisclosure()
-  
+  const { isOpen, onToggle } = useDisclosure();
+  const bg = colorMode === 'light' ? 'white' : 'gray.800';
+  const textColor = colorMode === 'light' ? 'gray.800' : 'white';
+
   return (
-    <Box px={4} shadow="md">
+    <Box px={4} shadow="md" position="fixed" top={0} width="100%" zIndex={1000} bg={bg} color={textColor}>
       <Flex h={16} alignItems="center" justifyContent="space-between">
         {/* Logo or App Name */}
         <Box fontWeight="bold" fontSize="lg">
@@ -32,75 +35,46 @@ function NavBar() {
 
         {/* Desktop Navigation Links */}
         <HStack fontWeight={'bold'} spacing={4} as="nav" display={{ base: 'none', md: 'flex' }}>
-          <Link as={RouterLink} to="/" px={2} py={1} rounded="md" _hover={{ bg: colorMode === 'light' ? 'gray.200' : 'gray.700' }}>
-            Home
-          </Link>
-          <Link as={RouterLink} to="/about" px={2} py={1} rounded="md" _hover={{ bg: colorMode === 'light' ? 'gray.200' : 'gray.700' }}>
-            About
-          </Link>
-          <Link as={RouterLink} to="/about" px={2} py={1} rounded="md" _hover={{ bg: colorMode === 'light' ? 'gray.200' : 'gray.700' }}>
-            Projects
-          </Link>
-          <Link as={RouterLink} to="/about" px={2} py={1} rounded="md" _hover={{ bg: colorMode === 'light' ? 'gray.200' : 'gray.700' }}>
-            Skills
-          </Link>
-          <Link as={RouterLink} to="/about" px={2} py={1} rounded="md" _hover={{ bg: colorMode === 'light' ? 'gray.200' : 'gray.700' }}>
-            Experiance
-          </Link>
-          <Link as={RouterLink} to="/contact" px={2} py={1} rounded="md" _hover={{ bg: colorMode === 'light' ? 'gray.200' : 'gray.700' }}>
-            Contact us
-          </Link>
+          <Link onClick={() => onNavigate('home')} cursor="pointer">Home</Link>
+          <Link onClick={() => onNavigate('about')} cursor="pointer">About</Link>
+          <Link onClick={() => onNavigate('projects')} cursor="pointer">Projects</Link>
+          <Link onClick={() => onNavigate('experiences')} cursor="pointer">Experiences</Link>
+          <Link onClick={() => onNavigate('contact')} cursor="pointer">Contact</Link>
         </HStack>
 
-        {/* Mobile Menu Icon */}
-        
-         
-
-        
+        {/* Mobile Menu Icon */}  
         <Spacer />
         <Button variant={'plain'} onClick={toggleColorMode} rounded={'full'}>
           {colorMode === "light" ? <BiMoon /> : <BiSun />}
         </Button>
-        <DrawerRoot  placement={'top'}>
-            <DrawerBackdrop />
-            <DrawerTrigger asChild>
+        <DrawerRoot placement={'top'}>
+          <DrawerBackdrop />
+          <DrawerTrigger asChild>
             <Button
-          variant={'plain'}
-          display={{ base: 'flex', md: 'none' }}
-          
-        >{isOpen ? <BiX /> : <BiMenu />}</Button>
-            </DrawerTrigger>
-            <DrawerContent
-             
-            >
-              <DrawerHeader>
-                <DrawerTitle>Menu</DrawerTitle>
-              </DrawerHeader>
-              <DrawerBody>
-              <Box      >
-        <VStack spacing={4} align="start" w={'full'}>
-          <Link as={RouterLink} to="/" w={'full'} px={2} py={1} rounded="md" >
-            Home
-          </Link>
-          <Link as={RouterLink} to="/about" w={'full'} px={2} py={1} rounded="md" >
-            About
-          </Link>
-          <Link as={RouterLink} to="/contact" w={'full'} px={2} py={1} rounded="md" >
-            Contact
-          </Link>
-        </VStack>
-      </Box>
-              </DrawerBody>
-              <DrawerFooter>
-                
-              </DrawerFooter>
-              <DrawerCloseTrigger />
-            </DrawerContent>
-          </DrawerRoot>
+              variant={'plain'}
+              display={{ base: 'flex', md: 'none' }}
+            >{isOpen ? <BiX /> : <BiMenu />}</Button>
+          </DrawerTrigger>
+          <DrawerContent>
+            <DrawerHeader>
+              <DrawerTitle>Menu</DrawerTitle>
+            </DrawerHeader>
+            <DrawerBody>
+              <Box>
+                <VStack spacing={4} align="start" w={'full'}>
+                  <Link onClick={() => onNavigate('home')} cursor="pointer">Home</Link>
+                  <Link onClick={() => onNavigate('about')} cursor="pointer">About</Link>
+                  <Link onClick={() => onNavigate('projects')} cursor="pointer">Projects</Link>
+                  <Link onClick={() => onNavigate('experiences')} cursor="pointer">Experiences</Link>
+                  <Link onClick={() => onNavigate('contact')} cursor="pointer">Contact</Link>
+                </VStack>
+              </Box>
+            </DrawerBody>
+            <DrawerFooter></DrawerFooter>
+            <DrawerCloseTrigger />
+          </DrawerContent>
+        </DrawerRoot>
       </Flex>
-
-      {/* Mobile Navigation Links */}
-      
     </Box>
   );
 }
