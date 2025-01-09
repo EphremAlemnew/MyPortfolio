@@ -6,7 +6,7 @@ import Projects from './Projects';
 import Experiences from './Experiences';
 
 const HomePage = () => (
-  <VStack spacing={16} mt={16} align="stretch" >
+  <VStack spacing={16} mt={16} mx={{lg: '28'}} align="stretch" >
     <Box id="home" p={8} borderRadius="md">
       <Heading as="h1" size="xl" textAlign="center">Welcome to My Portfolio</Heading>
       <Text mt={4} textAlign="center">What is Lorem Ipsum?

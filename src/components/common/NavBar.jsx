@@ -24,17 +24,17 @@ function NavBar({onNavigate}) {
 
   return (
     <Box px={4} shadow="md" position="fixed" top={0} width="100%" zIndex={1000} bg={bg} color={textColor}>
-      <Flex h={16} alignItems="center" justifyContent="space-between">
+      <Flex h={16} alignItems="center" mx={{lg:'14'}} justifyContent="space-between">
         {/* Logo or App Name */}
         <Box fontWeight="bold" fontSize="lg">
           <Link as={RouterLink} to="/">
-            MyApp
+           Ephrem Alemnew
           </Link>
         </Box>
         <Spacer />
 
         {/* Desktop Navigation Links */}
-        <HStack fontWeight={'bold'} spacing={4} as="nav" display={{ base: 'none', md: 'flex' }}>
+        <HStack fontWeight={'bold'} spacing={4} as="nav" display={{ base: 'none', md: 'flex' }} justifyContent="space-between">
           <Link onClick={() => onNavigate('home')} cursor="pointer">Home</Link>
           <Link onClick={() => onNavigate('about')} cursor="pointer">About</Link>
           <Link onClick={() => onNavigate('projects')} cursor="pointer">Projects</Link>
