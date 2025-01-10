@@ -10,7 +10,7 @@ const HomePage = () => {
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [textIndex, setTextIndex] = useState(0);
-  const texts = ['Junior Mobile App Developer', 'Junior Web App Developer'];
+  const texts = ['Mobile App Developer.', 'Web App Developer.'];
   const typingSpeed = 150; // Typing speed in ms
   const deletingSpeed = 50; // Deleting speed in ms
   const delayAfterTyping = 2000; // Delay after typing before deleting
@@ -59,7 +59,7 @@ const HomePage = () => {
     <VStack spacing={16} mt={16} mx={{ lg: '80' }} align="stretch">
       <Box id="home" p="8">
         <Stack
-          py="64"
+          py={"64"}
           borderBottom="md"
           direction={{ base: 'column', lg: 'row' }}
           align="center"
