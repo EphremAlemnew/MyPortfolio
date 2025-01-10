@@ -3,9 +3,9 @@ import React from 'react'
 
 const About = () => {
   return (
-    <Box id='about' p={'8'} py={{lg:"64"}}
-    borderBottom="md" >
-      <Box  p={'8'}>
+    <Box id='about' p={'8'} 
+     >
+      <Box  p={'8'} borderBottom="md" py={{lg:"64"}}>
       <Heading as="h1" size="4xl" fontWeight={'bolder'}>About </Heading>
           <Text mt={4} fontWeight={'bold'} fontSize={'xl'}>
           I am a passionate Full-Stack Developer dedicated to creating impactful web and mobile applications that blend cutting-edge technology with intuitive design. I thrive on transforming ideas into reality, delivering solutions that are scalable, efficient, and built to last.
