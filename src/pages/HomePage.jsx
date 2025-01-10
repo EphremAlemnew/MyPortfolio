@@ -5,6 +5,7 @@ import About from './About';
 import Projects from './Projects';
 import Experiences from './Experiences';
 import MyPhoto from '../assets/My.png';
+import { Toaster } from '@/components/ui/toaster';
 
 const HomePage = () => {
   const [currentText, setCurrentText] = useState('');
@@ -57,6 +58,7 @@ const HomePage = () => {
 
   return (
     <VStack spacing={16} mt={16} mx={{ lg: '80' }} align="stretch">
+      <Toaster />
       <Box id="home" p="8">
         <Stack
           py={"64"}

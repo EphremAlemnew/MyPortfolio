@@ -9,9 +9,26 @@ import {
   VStack, 
 
 } from "@chakra-ui/react";
+import { toaster } from "@/components/ui/toaster";
 
 const ContactMe = () => {
-
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const handleSubmit = () =>{
+    if(!name || !email || !message){
+      toaster.create({
+        title: 'Sorry, Fill all required fields!',
+        type: "error",
+      })
+    }else{
+      toaster.create({
+      title: 'Message sent Successfully',
+      type: "success",
+    })
+    }
+    
+  }
   return (
     <Box id='contact' p={'8'} 
     >
@@ -45,6 +62,7 @@ const ContactMe = () => {
           alignSelf={'end'}
           width={'1/3'}
           mt={4}
+          onClick={()=>handleSubmit()}
         >
           Send
         </Button>
