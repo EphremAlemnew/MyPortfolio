@@ -23,7 +23,7 @@ function NavBar({onNavigate}) {
   const textColor = colorMode === 'light' ? 'gray.800' : 'white';
 
   return (
-    <Box px={4} shadow="md" position="fixed" top={0} width="100%" zIndex={1000} bg={bg} color={textColor}>
+    <Box px={4} shadow="md" fontFamily='nunito' position="fixed" top={0} width="100%" zIndex={1000} bg={bg} color={textColor}>
       <Flex h={16} alignItems="center" mx={{lg:'14'}} justifyContent="space-between">
         {/* Logo or App Name */}
         <Box fontWeight="bold" fontSize="lg">

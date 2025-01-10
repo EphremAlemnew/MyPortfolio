@@ -70,11 +70,12 @@ const HomePage = () => {
         >
           {/* Text Section */}
           <VStack align={{ base: 'center', lg: 'flex-start' }} spacing={4}>
-            <Text fontWeight="bolder" fontSize={{ base: '2xl', md: '3xl' }} alignSelf="start">
+            <Text fontWeight="bolder" fontFamily="nunito" fontSize={{ base: '2xl', md: '3xl' }} alignSelf="start">
               Ephrem Alemnew
             </Text>
             <Text
-              fontWeight="bolder"
+              fontWeight="bolder" 
+              fontFamily="Roboto"
               fontSize={{ base: '4xl', md: '7xl' }}
               textAlign={{ base: 'center', lg: 'left' }}
             >
