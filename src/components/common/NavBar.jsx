@@ -34,8 +34,8 @@ function NavBar({onNavigate}) {
         <Spacer />
 
         {/* Desktop Navigation Links */}
-        <HStack fontWeight={'bold'} spacing={4} as="nav" display={{ base: 'none', md: 'flex' }} justifyContent="space-between">
-          <Link onClick={() => onNavigate('home')} cursor="pointer">Home</Link>
+        <HStack fontWeight={'bold'} spaceX={'8'} as="nav" display={{ base: 'none', md: 'flex' }} justifyContent="space-between">
+          <Link onClick={() => onNavigate('home')} cursor="pointer" >Home</Link>
           <Link onClick={() => onNavigate('about')} cursor="pointer">About</Link>
           <Link onClick={() => onNavigate('projects')} cursor="pointer">Projects</Link>
           <Link onClick={() => onNavigate('experiences')} cursor="pointer">Experiences</Link>

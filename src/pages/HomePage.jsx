@@ -1,33 +1,101 @@
-import React from 'react';
-import { Box, VStack, Heading, Text, Button } from '@chakra-ui/react';
+import React, { useState, useEffect } from 'react';
+import { Box, VStack, Text, Stack, Image } from '@chakra-ui/react';
 import ContactMe from './ContactMe';
 import About from './About';
 import Projects from './Projects';
 import Experiences from './Experiences';
+import MyPhoto from '../assets/My.png';
 
-const HomePage = () => (
-  <VStack spacing={16} mt={16} mx={{lg: '28'}} align="stretch" >
-    <Box id="home" p={8} borderRadius="md">
-      <Heading as="h1" size="xl" textAlign="center">Welcome to My Portfolio</Heading>
-      <Text mt={4} textAlign="center">What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+const HomePage = () => {
+  const [currentText, setCurrentText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [textIndex, setTextIndex] = useState(0);
+  const texts = ['Junior Mobile App Developer', 'Junior Web App Developer'];
+  const typingSpeed = 150; // Typing speed in ms
+  const deletingSpeed = 50; // Deleting speed in ms
+  const delayAfterTyping = 2000; // Delay after typing before deleting
+  const transitionDelay = 500; // Delay between text transitions
 
-Why do we use it?
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+  useEffect(() => {
+    let timeout;
 
+    const handleTyping = () => {
+      const fullText = texts[textIndex];
 
-Where does it come from?
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+      if (!isDeleting) {
+        // Typing phase
+        const nextText = fullText.slice(0, currentText.length + 1);
+        setCurrentText(nextText);
 
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-        
-      </Text>
-    </Box>
-    <About />
-    <Projects />
-    <Experiences />
-    <ContactMe />
-  </VStack>
-);
+        if (nextText === fullText) {
+          // Text fully typed, pause before deleting
+          timeout = setTimeout(() => setIsDeleting(true), delayAfterTyping);
+        } else {
+          timeout = setTimeout(handleTyping, typingSpeed);
+        }
+      } else {
+        // Deleting phase
+        const nextText = currentText.slice(0, currentText.length - 1);
+        setCurrentText(nextText);
+
+        if (nextText === '') {
+          // Text fully deleted, move to the next text
+          timeout = setTimeout(() => {
+            setIsDeleting(false);
+            setTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
+          }, transitionDelay);
+        } else {
+          timeout = setTimeout(handleTyping, deletingSpeed);
+        }
+      }
+    };
+
+    timeout = setTimeout(handleTyping, isDeleting ? deletingSpeed : typingSpeed);
+
+    return () => clearTimeout(timeout); // Cleanup timeout
+  }, [currentText, isDeleting, textIndex]);
+
+  return (
+    <VStack spacing={16} mt={16} mx={{ lg: '80' }} align="stretch">
+      <Box id="home" p="8">
+        <Stack
+          py="64"
+          borderBottom="md"
+          direction={{ base: 'column', lg: 'row' }}
+          align="center"
+          spacing={4}
+          justify={{ lg: 'space-between' }}
+        >
+          {/* Text Section */}
+          <VStack align={{ base: 'center', lg: 'flex-start' }} spacing={4}>
+            <Text fontWeight="bolder" fontSize={{ base: '2xl', md: '3xl' }} alignSelf="start">
+              Ephrem Alemnew
+            </Text>
+            <Text
+              fontWeight="bolder"
+              fontSize={{ base: '4xl', md: '7xl' }}
+              textAlign={{ base: 'center', lg: 'left' }}
+            >
+              {currentText}
+              <span style={{ color: 'gray' }}>|</span>
+            </Text>
+          </VStack>
+
+          {/* Image Section */}
+          <Image
+            src={MyPhoto}
+            rounded="2xl"
+            boxSize={{ base: '48', md: '64' }}
+            alt="My photo"
+          />
+        </Stack>
+      </Box>
+      <About />
+      <Projects />
+      <Experiences />
+      <ContactMe />
+    </VStack>
+  );
+};
 
 export default HomePage;
