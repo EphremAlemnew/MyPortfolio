@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, VStack, Text, Stack, Image } from '@chakra-ui/react';
+import { Box, VStack, Text, Stack, Image, Blockquote, BlockquoteIcon,Float } from '@chakra-ui/react';
 import ContactMe from './ContactMe';
 import About from './About';
 import Projects from './Projects';
@@ -81,11 +81,12 @@ const HomePage = () => {
         {currentText}
         <span style={{ color: 'gray' }}>|</span>
       </Text>
+      
       <Text
         fontSize={{ base: 'md', lg: 'lg' }}
         color="gray.500"
         textAlign={{ base: 'center', lg: 'left' }}
-        mt={4}
+        mt={4} fontStyle={'italic'}
       >
         Welcome to my portfolio! I am passionate about creating high-quality mobile and web
         applications that deliver value and enhance user experiences. Feel free to explore my

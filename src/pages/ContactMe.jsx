@@ -30,12 +30,12 @@ const ContactMe = () => {
     
   }
   return (
-    <Box id='contact' p={'8'} 
+    <Box id='contact' p={'8'} pt={{base:'8',lg:'0'}}
     >
       <Box  p={'8'} borderBottom="md" py={{lg:"60"}}>
         <VStack>
         <Heading as="h1" size="4xl" fontWeight={'bolder'} alignSelf={'start'}>Contact me</Heading>
-      <Text mb={6} alignSelf={'start'} fontWeight={'bold'} fontSize={'xl'}>
+      <Text mb={6} alignSelf={'start'}  fontSize={'lg'}>
         Feel free to get in touch by filling out the form below. I'd love to
         hear from you!
       </Text>

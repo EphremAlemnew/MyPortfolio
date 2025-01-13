@@ -4,10 +4,10 @@ import React from 'react'
 import { techData } from '@/data/data'
 const Experiences = () => {
   return (
-    <Box id='experiences' p={'8'}  >
+    <Box id='experiences' p={'8'} pt={{base:'8',lg:'0'}}  >
       <Box  p={'2'} borderBottom="md" py={{lg:"64"}}>
       <Heading as="h1" size="4xl" fontWeight={'bolder'}>Experiences </Heading>
-          <Text m={4} fontWeight={'bold'} fontSize={'xl'}>
+          <Text m={4}  fontSize={'lg'}>
           Here are the programming languages, frameworks, technologies, and tools that power my craft and fuel my passion for building exceptional solutions.
           </Text>
           <SimpleGrid columns={{

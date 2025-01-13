@@ -13,6 +13,7 @@ import '@fontsource/montserrat'
 import '@fontsource/nunito'
 import '@fontsource/playfair-display'
 import '@fontsource/raleway'
+import SocialMediaLinks from './components/common/SocialMediaLinks'
 const App = () => {
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -25,6 +26,7 @@ const App = () => {
     <Box>
       <NavBar onNavigate={scrollToSection} />
       <HomePage />
+      <SocialMediaLinks />
     </Box>
   );
 };

@@ -4,10 +4,10 @@ import { projectsData } from '@/data/data'
 import ProjectCard from '@/components/common/ProjectCard'
 const Projects = () => {
   return (
-    <Box id='projects' p={'8'}  >
+    <Box id='projects' p={'8'} pt={{base:'8',lg:'0'}} >
       <Box  p={'2'} borderBottom="md" py={{lg:"64"}}>
       <Heading as="h1" size="4xl" fontWeight={'bolder'}>Projects </Heading>
-          <Text m={4} fontWeight={'bold'} fontSize={'xl'}>
+          <Text m={4}  fontSize={'lg'}>
           Discover a selection of projects that demonstrate my ability to turn ideas into impactful solutions.
           </Text>
           <SimpleGrid columns={{

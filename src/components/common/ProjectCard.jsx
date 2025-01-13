@@ -33,7 +33,7 @@ const ProjectCard = ({ projects }) => {
             rounded={'lg'}
             alignSelf={'center'}
           />
-          <Heading textAlign={'center'} as={'h3'} size={'md'} m={2}>
+          <Heading textAlign={'center'} as={'h4'} size={'sm'} m={2}>
               {projects.name}
             </Heading>
           <HStack justifyContent={'space-between'}>

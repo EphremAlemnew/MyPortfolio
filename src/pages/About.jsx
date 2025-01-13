@@ -3,7 +3,7 @@ import React from 'react'
 
 const About = () => {
   return (
-    <Box id='about' p={'8'} 
+    <Box id='about' p={'8'} pt={{base:'8',lg:'0'}} 
      >
       <Box  p={'2'} borderBottom="md" py={{lg:"64"}}>
       <Heading as="h1" size="4xl"  fontWeight={'extrabold'}>About </Heading>
