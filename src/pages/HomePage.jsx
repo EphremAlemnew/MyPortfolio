@@ -60,38 +60,49 @@ const HomePage = () => {
     <VStack spacing={16} mt={16} mx={{ lg: '80' }} align="stretch">
       <Toaster />
       <Box id="home" p="8">
-        <Stack
-          py={"64"}
-          borderBottom="md"
-          direction={{ base: 'column', lg: 'row' }}
-          align="center"
-          spacing={4}
-          justify={{ lg: 'space-between' }}
-        >
-          {/* Text Section */}
-          <VStack align={{ base: 'center', lg: 'flex-start' }} spacing={4}>
-            <Text fontWeight="bolder" fontSize={{ base: '2xl', md: '3xl' }} alignSelf="start">
-              Ephrem Alemnew
-            </Text>
-            <Text
-              fontWeight="extrabold" 
-              fontSize={{ base: '3xl', md: '7xl' }}
-              textAlign={{ base: 'center', lg: 'left' }}
-            >
-              {currentText}
-              <span style={{ color: 'gray' }}>|</span>
-            </Text>
-          </VStack>
+  <Stack
+    py={"64"}
+    borderBottom="md"
+    direction={{ base: 'column', lg: 'row' }}
+    align="center"
+    spacing={4}
+    justify={{ lg: 'space-between' }}
+  >
+    {/* Text Section */}
+    <VStack align={{ base: 'center', lg: 'flex-start' }} spacing={4}>
+      <Text fontWeight="bolder" fontSize={{ base: '2xl', md: '3xl' }} alignSelf="start">
+        Ephrem Alemnew
+      </Text>
+      <Text
+        fontWeight="extrabold"
+        fontSize={{ base: '3xl', md: '7xl' }}
+        textAlign={{ base: 'center', lg: 'left' }}
+      >
+        {currentText}
+        <span style={{ color: 'gray' }}>|</span>
+      </Text>
+      <Text
+        fontSize={{ base: 'md', lg: 'lg' }}
+        color="gray.500"
+        textAlign={{ base: 'center', lg: 'left' }}
+        mt={4}
+      >
+        Welcome to my portfolio! I am passionate about creating high-quality mobile and web
+        applications that deliver value and enhance user experiences. Feel free to explore my
+        journey, projects, and the tools I work with. Let’s build something amazing together!
+      </Text>
+    </VStack>
 
-          {/* Image Section */}
-          <Image
-            src={MyPhoto}
-            rounded="2xl"
-            boxSize={{ base: '48', md: '64' }}
-            alt="My photo"
-          />
-        </Stack>
-      </Box>
+    {/* Image Section */}
+    <Image
+      src={MyPhoto}
+      rounded="2xl"
+      boxSize={{ base: '48', md: '64' }}
+      alt="My photo"
+    />
+  </Stack>
+</Box>
+
       <About />
       <Projects />
       <Experiences />

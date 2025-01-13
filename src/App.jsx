@@ -12,6 +12,7 @@ import '@fontsource/lora'
 import '@fontsource/montserrat'
 import '@fontsource/nunito'
 import '@fontsource/playfair-display'
+import '@fontsource/raleway'
 const App = () => {
   const scrollToSection = (id) => {
     const element = document.getElementById(id);

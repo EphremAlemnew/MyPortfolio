@@ -143,24 +143,24 @@ export const techData = [
       techImage: "https://images.seeklogo.com/logo-png/31/1/apache-logo-png_seeklogo-314278.png?v=1957905405973103984",
       expeYears: 5,
     },
-    // {
-    //   id: 25,
-    //   techName: "Dart",
-    //   techImage: "https://seeklogo.com/images/D/dart-logo-FDA1939EC4-seeklogo.com.png",
-    //   expeYears: 2,
-    // },
-    // {
-    //   id: 26,
-    //   techName: "Next js",
-    //   techImage: "https://images.seeklogo.com/logo-png/32/1/next-js-logo-png_seeklogo-321806.png?v=1957908778386742672",
-    //   expeYears: 3,
-    // },
-    // {
-    //   id: 27,
-    //   techName: "React Native",
-    //   techImage: "https://images.seeklogo.com/logo-png/41/1/react-native-logo-png_seeklogo-410644.png?v=1957906344253720128",
-    //   expeYears: 2,
-    // },
+    {
+      id: 25,
+      techName: "JWT",
+      techImage: "https://seeklogo.com/images/J/jwt-io-json-web-token-logo-40E02494CD-seeklogo.com.png",
+      expeYears: 2,
+    },
+    {
+      id: 26,
+      techName: "Notion",
+      techImage: "https://seeklogo.com/images/N/notion-app-logo-009B1538E8-seeklogo.com.png",
+      expeYears: 3,
+    },
+    {
+      id: 27,
+      techName: "VS code",
+      techImage: "https://images.seeklogo.com/logo-png/38/1/visual-studio-code-logo-png_seeklogo-384323.png?v=1957905886876500128",
+      expeYears: 2,
+    },
     // {
     //   id: 28,
     //   techName: "Django Rest Framework",

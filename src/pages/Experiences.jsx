@@ -8,7 +8,7 @@ const Experiences = () => {
       <Box  p={'8'} borderBottom="md" py={{lg:"64"}}>
       <Heading as="h1" size="4xl" fontWeight={'bolder'}>Experiences </Heading>
           <Text m={4} fontWeight={'bold'} fontSize={'xl'}>
-          This are programming languages, frameworks and technologies i am working with.
+          Here are the programming languages, frameworks, technologies, and tools that power my craft and fuel my passion for building exceptional solutions.
           </Text>
           <SimpleGrid columns={{
           base:2,
