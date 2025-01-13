@@ -16,7 +16,7 @@ const ContactMe = () => {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const handleSubmit = () =>{
-    if(!name || !email || !message){
+    if(name=='' || email=='' || message==''){
       toaster.create({
         title: 'Sorry, Fill all required fields!',
         type: "error",
@@ -42,19 +42,23 @@ const ContactMe = () => {
       <Input 
                         placeholder='Your Name' 
                         name='name' 
+                        value={name}
+                        onChange={(e)=>setName(e.target.value)}
                         />
                         
                     <Input my={4}
                         placeholder='Email Address' 
                         name='price' 
-                       
+                        value={email}
+                        onChange={(e)=>setEmail(e.target.value)}
                         />
                     <Textarea height={16}
                         placeholder='Message' 
                         name='image' 
                         size={'md'}
                         h={'36'}
-                        
+                        value={message}
+                        onChange={(e)=>setMessage(e.target.value)}
                         />
         <Button
           type="submit"
