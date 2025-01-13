@@ -27,7 +27,7 @@ function NavBar({onNavigate}) {
       <Flex h={16} alignItems="center" mx={{lg:'14'}} justifyContent="space-between">
         {/* Logo or App Name */}
         <Box fontWeight="bold" fontSize="lg">
-          <Link as={RouterLink} to="/">
+          <Link onClick={() => onNavigate('home')} cursor={'pointer'}>
            Ephrem Alemnew
           </Link>
         </Box>

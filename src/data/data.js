@@ -169,4 +169,42 @@ export const techData = [
     // },
     
   ];
+  export const projectsData = [
+    {
+      id: 1,
+      name: "Toorax Inventory Management System",
+      image: "/vite.svg",
+      proUrl: "https://www.google.com",
+      codeUrl: "https://github.com/EphremAlemnew",
+    },
+    {
+      id: 2,
+      name: "Toorax Inventory Management System",
+      image: "/vite.svg",
+      proUrl: "",
+      codeUrl: "https://github.com/EphremAlemnew",
+    },
+    {
+      id: 3,
+      name: "Toorax Inventory Management System",
+      image: "/vite.svg",
+      proUrl: "https://www.google.com",
+      codeUrl: "https://github.com/EphremAlemnew",
+    },
+    {
+      id: 4,
+      name: "Toorax Inventory Management System",
+      image: "/vite.svg",
+      proUrl: "",
+      codeUrl: "https://github.com/EphremAlemnew",
+    },
+    {
+      id: 5,
+      name: "Toorax Inventory Management System",
+      image: "/vite.svg",
+      proUrl: "https://www.google.com",
+      codeUrl: "https://github.com/EphremAlemnew",
+    },
+    // Other projects
+  ];
   
