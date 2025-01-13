@@ -4,7 +4,7 @@ import React from 'react'
 const Projects = () => {
   return (
     <Box id='projects' p={'8'}  >
-      <Box  p={'8'} py={{lg:"64"}} borderBottom="md">
+      <Box  p={'8'} py={{lg:"64"}}borderBottom="md">
       <Heading as="h1" size="4xl" fontWeight={'bolder'}>Projects </Heading>
           <Text mt={4} fontWeight={'bold'} fontSize={'xl'}>
     
