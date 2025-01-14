@@ -39,23 +39,27 @@ const ContactMe = () => {
         Feel free to get in touch by filling out the form below. I'd love to
         hear from you!
       </Text>
+      <form action="https://getform.io/f/arooqzxb" method="POST">
       <Input 
-                        placeholder='Your Name' 
+                        placeholder='Full name' 
                         name='name' 
                         value={name}
+                        required
                         onChange={(e)=>setName(e.target.value)}
                         />
                         
                     <Input my={4}
                         placeholder='Email Address' 
-                        name='price' 
+                        name='Email Address' 
+                        required
                         value={email}
                         onChange={(e)=>setEmail(e.target.value)}
                         />
                     <Textarea height={16}
                         placeholder='Message' 
-                        name='image' 
+                        name='Message' 
                         size={'md'}
+                        required
                         h={'36'}
                         value={message}
                         onChange={(e)=>setMessage(e.target.value)}
@@ -70,6 +74,8 @@ const ContactMe = () => {
         >
           Send
         </Button>
+      </form>
+      
         </VStack>
       
       </Box>
