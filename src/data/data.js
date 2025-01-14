@@ -172,6 +172,14 @@ export const techData = [
   export const projectsData = [
     {
       id: 1,
+      name: "Calculator",
+      image: "/Calculator.png",
+      proUrl: "https://calculator-uio5.onrender.com/",
+      proTech: "React, Vite.js, Chakra UI",
+      codeUrl: "https://github.com/EphremAlemnew/Calculator",
+    },
+    {
+      id: 2,
       name: "Toorax Inventory Management System",
       image: "/Toorax.png",
       proUrl: "",
@@ -179,7 +187,7 @@ export const techData = [
       codeUrl: "https://github.com/EphremAlemnew",
     },
     {
-      id: 2,
+      id: 3,
       name: "Simple To do list app",
       image: "/Flutter.jpg",
       proUrl: "",
@@ -187,7 +195,7 @@ export const techData = [
       codeUrl: "https://github.com/EphremAlemnew/Flutter-Simple-to-do-list-app.git",
     },
     {
-      id: 3,
+      id: 4,
       name: "Online Medication Finder",
       proUrl: "",
       image: "/Medication.jpg",
@@ -195,21 +203,21 @@ export const techData = [
       codeUrl: "https://github.com/EphremAlemnew",
     },
     {
-      id: 4,
+      id: 5,
       name: "Simple Ecommerce Web app",
       image: "/SimpleEcommerce.png",
       proUrl: "",
       proTech: "Mongodb, React, Express.js, Node.js",
       codeUrl: "https://github.com/EphremAlemnew/MernSimpleWeb",
     },
-    {
-      id: 5,
-      name: "Calculator",
-      image: "/Calculator.png",
-      proUrl: "",
-      proTech: "React, Vite.js, Chakra UI",
-      codeUrl: "https://github.com/EphremAlemnew/Calculator",
-    },
+    // {
+    //   id: 5,
+    //   name: "Calculator",
+    //   image: "/Calculator.png",
+    //   proUrl: "https://calculator-uio5.onrender.com/",
+    //   proTech: "React, Vite.js, Chakra UI",
+    //   codeUrl: "https://github.com/EphremAlemnew/Calculator",
+    // },
     // Other projects
   ];
   

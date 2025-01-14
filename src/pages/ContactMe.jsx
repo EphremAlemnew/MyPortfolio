@@ -39,7 +39,7 @@ const ContactMe = () => {
         Feel free to get in touch by filling out the form below. I'd love to
         hear from you!
       </Text>
-      <form action="https://getform.io/f/arooqzxb" method="POST">
+      <form action="https://getform.io/f/bxooxqga" method="POST">
       <Input 
                         placeholder='Full name' 
                         name='name' 
