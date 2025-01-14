@@ -174,7 +174,7 @@ export const techData = [
       id: 1,
       name: "Toorax Inventory Management System",
       image: "/Toorax.png",
-      proUrl: "https://www.google.com",
+      proUrl: "",
       proTech: "Next.js, Django restframework, Shadcn",
       codeUrl: "https://github.com/EphremAlemnew",
     },
