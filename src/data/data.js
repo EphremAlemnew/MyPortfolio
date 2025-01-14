@@ -206,9 +206,9 @@ export const techData = [
       id: 5,
       name: "Calculator",
       image: "/Calculator.png",
-      proUrl: "https://www.google.com",
+      proUrl: "",
       proTech: "React, Vite.js, Chakra UI",
-      codeUrl: "https://github.com/EphremAlemnew",
+      codeUrl: "https://github.com/EphremAlemnew/Calculator",
     },
     // Other projects
   ];
