@@ -33,13 +33,13 @@ const ContactMe = () => {
     <Box id='contact' p={'8'} pt={{base:'8',lg:'0'}}
     >
       <Box  p={'8'} borderBottom="md" py={{lg:"60"}}>
-        <VStack>
+       
+      <form action="https://getform.io/f/bxooxqga" method="POST"> <VStack>
         <Heading as="h1" size="4xl" fontWeight={'bolder'} alignSelf={'start'}>Contact me</Heading>
       <Text mb={6} alignSelf={'start'}  fontSize={'lg'}>
         Feel free to get in touch by filling out the form below. I'd love to
         hear from you!
       </Text>
-      <form action="https://getform.io/f/bxooxqga" method="POST">
       <Input 
                         placeholder='Full name' 
                         name='name' 
@@ -73,10 +73,10 @@ const ContactMe = () => {
           onClick={()=>handleSubmit()}
         >
           Send
-        </Button>
+        </Button></VStack>
       </form>
       
-        </VStack>
+        
       
       </Box>
           
